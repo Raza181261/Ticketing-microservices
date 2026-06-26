@@ -1,0 +1,468 @@
+:root {
+  --fifa-bg: #0A0E1A;
+  --fifa-card: #111827;
+  --fifa-card-2: #1F2937;
+  --fifa-gold: #C9A84C;
+  --fifa-gold-light: #F5D17A;
+  --fifa-green: #00D26A;
+  --fifa-white: #FFFFFF;
+  --fifa-muted: #9CA3AF;
+  --fifa-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+  --fifa-transition: 0.3s ease;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--fifa-white);
+  background:
+    radial-gradient(circle at top, rgba(201, 168, 76, 0.08), transparent 30%),
+    linear-gradient(rgba(10, 14, 26, 0.96), rgba(10, 14, 26, 0.96)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03) 0,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 120px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.02) 0,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 120px
+    ),
+    linear-gradient(180deg, #0A0E1A 0%, #070b14 100%);
+  background-attachment: fixed;
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+button,
+input,
+.btn,
+.nav-link {
+  transition: all var(--fifa-transition);
+}
+
+a {
+  color: var(--fifa-gold);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--fifa-gold-light);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0E1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--fifa-gold), var(--fifa-gold-light));
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: var(--fifa-shadow);
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-content {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.navbar.fifa-navbar {
+  background: rgba(10, 14, 26, 0.88) !important;
+  backdrop-filter: blur(14px);
+  border-bottom: 3px solid transparent;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar.fifa-navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--fifa-gold), var(--fifa-gold-light));
+}
+
+.fifa-brand {
+  color: var(--fifa-gold) !important;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: var(--fifa-shadow);
+}
+
+.fifa-brand:hover {
+  color: var(--fifa-gold-light) !important;
+}
+
+.fifa-nav-link {
+  position: relative;
+  color: var(--fifa-white) !important;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 0.75rem 1rem !important;
+}
+
+.fifa-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.35rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fifa-gold), var(--fifa-gold-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--fifa-transition);
+}
+
+.fifa-nav-link:hover {
+  color: var(--fifa-gold) !important;
+}
+
+.fifa-nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.fifa-page {
+  position: relative;
+  isolation: isolate;
+  padding: 1rem 0 2rem;
+}
+
+.fifa-page::before {
+  content: "";
+  position: absolute;
+  inset: -2rem;
+  z-index: -1;
+  opacity: 0.18;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 210, 106, 0.18), transparent 20%),
+    radial-gradient(circle at 80% 20%, rgba(201, 168, 76, 0.12), transparent 20%),
+    linear-gradient(180deg, rgba(17, 24, 39, 0.4), rgba(10, 14, 26, 0.1));
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), transparent 92%);
+}
+
+.fifa-section-card,
+.fifa-table-wrap,
+.fifa-auth-card,
+.fifa-ticket-card,
+.fifa-order-card {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(10, 14, 26, 0.98));
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45), var(--fifa-shadow);
+}
+
+.fifa-section-card {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.fifa-title,
+.fifa-auth-title,
+.fifa-page-title,
+.fifa-ticket-title {
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 0.95;
+  margin-bottom: 1rem;
+}
+
+.fifa-gradient-text {
+  background: linear-gradient(135deg, var(--fifa-gold), var(--fifa-gold-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.fifa-table {
+  color: var(--fifa-white);
+  margin-bottom: 0;
+}
+
+.fifa-table thead th {
+  background: rgba(17, 24, 39, 0.98);
+  color: var(--fifa-gold);
+  border-color: rgba(201, 168, 76, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Roboto", sans-serif;
+}
+
+.fifa-table tbody tr:nth-child(odd) {
+  background: rgba(17, 24, 39, 0.95);
+}
+
+.fifa-table tbody tr:nth-child(even) {
+  background: rgba(31, 41, 55, 0.95);
+}
+
+.fifa-table tbody tr:hover {
+  background: rgba(201, 168, 76, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(201, 168, 76, 0.3);
+}
+
+.fifa-table td,
+.fifa-table th {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  vertical-align: middle;
+}
+
+.fifa-table-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--fifa-gold), var(--fifa-gold-light));
+  color: #0A0E1A !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: var(--fifa-shadow);
+}
+
+.fifa-table-link:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.fifa-auth-page {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.fifa-auth-card {
+  width: min(100%, 560px);
+  border-radius: 28px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.fifa-auth-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 14, 26, 0.05), rgba(10, 14, 26, 0.55)),
+    radial-gradient(circle at top, rgba(201, 168, 76, 0.08), transparent 38%),
+    linear-gradient(180deg, transparent 52%, rgba(255, 255, 255, 0.03) 52%, rgba(255, 255, 255, 0.03) 53%, transparent 53%);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.fifa-auth-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.fifa-auth-icon {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.fifa-form-group {
+  margin-bottom: 1rem;
+}
+
+.fifa-label {
+  color: var(--fifa-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.82rem;
+  margin-bottom: 0.5rem;
+}
+
+.fifa-input,
+.form-control.fifa-input {
+  background: var(--fifa-card-2);
+  color: var(--fifa-white);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  min-height: 52px;
+  padding: 0.85rem 1rem;
+  box-shadow: none;
+}
+
+.fifa-input::placeholder {
+  color: rgba(156, 163, 175, 0.75);
+}
+
+.fifa-input:focus,
+.form-control.fifa-input:focus {
+  background: var(--fifa-card-2);
+  color: var(--fifa-white);
+  border-color: var(--fifa-gold);
+  box-shadow: 0 0 0 0.2rem rgba(201, 168, 76, 0.2), var(--fifa-shadow);
+}
+
+.fifa-submit,
+.btn.btn-primary.fifa-submit {
+  background: linear-gradient(135deg, var(--fifa-gold), var(--fifa-gold-light));
+  color: #0A0E1A !important;
+  border: none;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: 0.9rem 1.5rem;
+  box-shadow: var(--fifa-shadow);
+}
+
+.fifa-submit:hover,
+.btn.btn-primary.fifa-submit:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 0 26px rgba(201, 168, 76, 0.45);
+}
+
+.fifa-auth-note {
+  color: var(--fifa-muted);
+}
+
+.fifa-ticket-card,
+.fifa-order-card {
+  border-radius: 28px;
+  padding: 2rem;
+}
+
+.fifa-ticket-price {
+  color: var(--fifa-green);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.fifa-ticket-meta,
+.fifa-order-meta {
+  color: var(--fifa-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.fifa-ticket-button,
+.fifa-stripe-button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--fifa-gold), var(--fifa-gold-light)) !important;
+  color: #0A0E1A !important;
+  border: none !important;
+  border-radius: 999px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  box-shadow: var(--fifa-shadow);
+}
+
+.fifa-ticket-button:hover,
+.fifa-stripe-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 26px rgba(201, 168, 76, 0.45);
+}
+
+.fifa-order-clock {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  border-radius: 24px;
+  background: rgba(10, 14, 26, 0.65);
+  border: 1px solid rgba(201, 168, 76, 0.22);
+}
+
+.fifa-order-timer {
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--fifa-gold-light);
+  font-size: clamp(3rem, 10vw, 6rem);
+  letter-spacing: 4px;
+  line-height: 1;
+  text-shadow: var(--fifa-shadow);
+}
+
+.fifa-order-expired {
+  color: #ef4444;
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+}
+
+.fifa-order-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fifa-order-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fifa-order-status {
+  color: var(--fifa-gold-light);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.alert.alert-danger {
+  background: rgba(127, 29, 29, 0.2);
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  color: #fecaca;
+  border-radius: 16px;
+}
+
+.alert.alert-danger h4 {
+  color: #fca5a5;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 575.98px) {
+  .fifa-auth-card,
+  .fifa-ticket-card,
+  .fifa-order-card {
+    padding: 1.25rem;
+    border-radius: 20px;
+  }
+
+  .fifa-brand {
+    font-size: 1.7rem;
+  }
+
+  .fifa-table-link {
+    padding: 0.35rem 0.7rem;
+  }
+}
